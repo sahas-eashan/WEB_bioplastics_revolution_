@@ -9,6 +9,9 @@ import Team from "./pages/Team";
 import Events from "./pages/Events"; 
 import Contact from "./pages/Contact"; 
 import './styles/index.css';  
+import OceanCleanupPage from './pages/ocean_clean';
+import EcoSolutionsPage from './pages/eco_solutions';    
+import CommunityImpactPage from './pages/community_impact';
 
 export default function App() {     
     return (         
@@ -22,7 +25,11 @@ export default function App() {
                         <Route path="/impact" element={<Impact />} />                         
                         <Route path="/team" element={<Team />} />                         
                         <Route path="/events" element={<Events />} />                         
-                        <Route path="/contact" element={<Contact />} />                     
+                        <Route path="/contact" element={<Contact />} />                         
+                        <Route path="/ocean_clean" element={<OceanCleanupPage />} />
+                        <Route path="/eco_solutions" element={<EcoSolutionsPage />} />
+                        <Route path="/community_impact" element={<CommunityImpactPage />} />
+
                     </Routes>                 
                 </main>                 
                 <Footer />  {/* This is your new green footer */}
