@@ -29,6 +29,7 @@ export default function App() {
                         <Route path="/eco_solutions" element={<EcoSolutionsPage />} />
                         <Route path="/community_impact" element={<CommunityImpactPage />} />
                         <Route path="/PhotoGallery" element={<PhotoGallery />} />
+                        <Route path="*" element={<Home />} />  {/* Catch-all route */}
                     </Routes>                 
                 </main>                 
                 <Footer />  {/* This is your new green footer */}
