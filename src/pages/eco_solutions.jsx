@@ -1,6 +1,9 @@
 import React from 'react';
 import { Leaf, ArrowLeft, Beaker, Recycle, TreePine, Factory } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
+import p3Image from '/images/p3.png'
+import p2Image from '/images/p2.png';
+import p1Image from '/images/p1.png';
 
 export default function EcoSolutionsPage() {
   const navigate = useNavigate(); // Actually use the hook you imported
@@ -211,7 +214,7 @@ export default function EcoSolutionsPage() {
               <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
                 <div className="w-full h-48 bg-gradient-to-br from-green-100 to-green-200 rounded-xl mb-6 flex items-center justify-center">
                   <img
-                    src="/images/p1.png"
+                    src={p1Image}
                     alt="Food Packaging"
                     className="w-full h-full object-cover rounded-xl transition-transform duration-300 hover:scale-105"
                   />
@@ -230,7 +233,7 @@ export default function EcoSolutionsPage() {
               <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
                 <div className="w-full h-48 bg-gradient-to-br from-emerald-100 to-emerald-200 rounded-xl mb-6 flex items-center justify-center">
                     <img
-                      src="/images/p2.png"
+                    src={p2Image}
                       alt="Shopping Bags"
                       className="w-full h-full object-cover rounded-xl transition-transform duration-300 hover:scale-105"
                     />
@@ -249,7 +252,7 @@ export default function EcoSolutionsPage() {
               <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
                 <div className="w-full h-48 bg-gradient-to-br from-teal-100 to-teal-200 rounded-xl mb-6 flex items-center justify-center">
                     <img
-                        src="images/p3.png"
+                    src={p3Image}
                         alt="Agricultural Products"
                         className="w-full h-full object-cover rounded-xl transition-transform duration-300 hover:scale-105"
                     />
