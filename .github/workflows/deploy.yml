@@ -2,7 +2,7 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [ main ]  # Triggers when you push to main branch
+    branches: [ main ]
 
 permissions:
   contents: read
@@ -11,30 +11,31 @@ permissions:
 
 jobs:
   build-and-deploy:
-    runs-on: ubuntu-latest  # Uses Ubuntu server
+    runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4  # Downloads your code
+      - name: Checkout
+        uses: actions/checkout@v4
         
-      - name: Setup Node.js
-        uses: actions/setup-node@v4  # Installs Node.js
+      - name: Setup Node
+        uses: actions/setup-node@v4
         with:
-          node-version: '18'
-          cache: 'npm'  # Speeds up by caching npm packages
+          node-version: '20'
+          cache: 'npm'
           
       - name: Install dependencies
-        run: npm install  # Installs your project dependencies
+        run: npm ci
         
-      - name: Build project
-        run: npm run build  # Builds your React/Vite project
+      - name: Build
+        run: npm run build
         
       - name: Setup Pages
         uses: actions/configure-pages@v4
         
-      - name: Upload build files
-        uses: actions/upload-pages-artifact@v2
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
         with:
-          path: './dist'  # Uploads the built files
+          path: './dist'
           
       - name: Deploy to GitHub Pages
-        uses: actions/deploy-pages@v3  # Actually deploys to your site
+        id: deployment
+        uses: actions/deploy-pages@v4
