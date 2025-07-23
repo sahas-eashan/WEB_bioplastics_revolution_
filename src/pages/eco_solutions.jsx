@@ -249,7 +249,7 @@ export default function EcoSolutionsPage() {
               <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
                 <div className="w-full h-48 bg-gradient-to-br from-teal-100 to-teal-200 rounded-xl mb-6 flex items-center justify-center">
                     <img
-                        src="/images/p3.png"
+                        src="images/p3.png"
                         alt="Agricultural Products"
                         className="w-full h-full object-cover rounded-xl transition-transform duration-300 hover:scale-105"
                     />
