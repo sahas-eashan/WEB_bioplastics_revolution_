@@ -1,7 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Leaf, Heart, Users, Globe, Lightbulb, Target, Recycle, Waves, TreePine, Beaker, Megaphone, User } from 'lucide-react';
-import { useInView } from 'react-intersection-observer';
-
 
 export default function About() {
   const [isVisible, setIsVisible] = useState(false);
@@ -37,12 +35,12 @@ const teamMembers = [
     id: 1,
     name: "Demitha Manawadu",
     role: " Co-Founder & CEO",
-    description: "Overseeing strategy and leadership while driving the company’s mission.",
+    description: "Overseeing strategy and leadership while driving the company's mission.",
     icon: <Beaker className="w-6 h-6" />,
     color: "from-green-400 to-emerald-600",
     bgColor: "bg-green-100",
-    profileImage: "images/demitha.avif",
-    backgroundImage: "images/demitha.avif",
+    profileImage: `${import.meta.env.BASE_URL}demitha.avif`,
+    backgroundImage: `${import.meta.env.BASE_URL}demitha.avif`,
     position: { top: '30%', left: '5%', transform: 'translate(-80%, -50%)' }
   },
   {
@@ -53,8 +51,8 @@ const teamMembers = [
     icon: <Waves className="w-6 h-6" />,
     color: "from-blue-400 to-cyan-600",
     bgColor: "bg-blue-100",
-    profileImage: "images/banuka.avif",
-    backgroundImage: "images/banuka.avif",
+    profileImage: `${import.meta.env.BASE_URL}banuka.avif`,
+    backgroundImage: `${import.meta.env.BASE_URL}banuka.avif`,
     position: { top: '20%', left: '50%', transform: 'translate(-50%, -50%)' }
   },
   {
@@ -65,8 +63,8 @@ const teamMembers = [
     icon: <Megaphone className="w-6 h-6" />,
     color: "from-purple-400 to-violet-600",
     bgColor: "bg-purple-100",
-    profileImage: "images/benuri.avif",
-    backgroundImage: "images/benuri.avif",
+    profileImage: `${import.meta.env.BASE_URL}benuri.avif`,
+    backgroundImage: `${import.meta.env.BASE_URL}benuri.avif`,
     position: { top: '30%', left: '95%', transform: 'translate(-20%, -50%)' }
   },
   {
@@ -77,8 +75,8 @@ const teamMembers = [
     icon: <Lightbulb className="w-6 h-6" />,
     color: "from-orange-400 to-red-500",
     bgColor: "bg-orange-100",
-    profileImage: "./images/sahas%20eashan.avif",
-    backgroundImage: "./images/sahas%20eashan.avif",
+    profileImage: `${import.meta.env.BASE_URL}sahas%20eashan.avif`,
+    backgroundImage: `${import.meta.env.BASE_URL}sahas%20eashan.avif`,
     position: { top: '75%', left: '25%', transform: 'translate(-50%, -50%)' }
   },
   {
@@ -89,12 +87,11 @@ const teamMembers = [
     icon: <TreePine className="w-6 h-6" />,
     color: "from-teal-400 to-green-600",
     bgColor: "bg-teal-100",
-    profileImage: "images/hasari.avif",
-    backgroundImage: "images/hasari.avif",
+    profileImage: `${import.meta.env.BASE_URL}hasari.avif`,
+    backgroundImage: `${import.meta.env.BASE_URL}hasari.avif`,
     position: { top: '75%', left: '75%', transform: 'translate(-50%, -50%)' }
   }
 ];
-
 
   const getCardStyle = (member) => {
     const isHovered = hoveredMember === member.id;
@@ -164,7 +161,7 @@ const teamMembers = [
               {/* Mission Image */}
               <div className="relative group">
                 <img 
-                  src="images/mission-photo.jpg"
+                  src={`${import.meta.env.BASE_URL}mission-photo.jpg`}
                   alt="Our mission in action - seaweed research and development"
                   className="w-full h-80 object-cover rounded-2xl shadow-lg transform group-hover:scale-105 transition-transform duration-300"
                   onError={(e) => {
@@ -174,17 +171,27 @@ const teamMembers = [
                   }}
                 />
                 {/* Fallback placeholder */}
-                <div className="w-full h-80 bg-gradient-to-br from-green-200 to-blue-200 rounded-2xl flex items-center justify-center shadow-lg transform group-hover:scale-105 transition-transform duration-300 overflow-hidden">
+                <div className="w-full h-80 bg-gradient-to-br from-green-200 to-blue-200 rounded-2xl flex items-center justify-center shadow-lg transform group-hover:scale-105 transition-transform duration-300 overflow-hidden" style={{display: 'none'}}>
                   <img
-                    src="images/mision.avif"
+                    src={`${import.meta.env.BASE_URL}mision.avif`}
                     alt="Our Mission"
                     className="w-full h-full object-cover"
+                    onError={(e) => {
+                      // Final fallback to icon
+                      e.target.parentElement.innerHTML = `
+                        <div class="flex flex-col items-center justify-center text-gray-500">
+                          <svg class="w-16 h-16 mb-4" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                          </svg>
+                          <p class="text-lg font-medium">Our Mission</p>
+                        </div>
+                      `;
+                    }}
                   />
                 </div>
                 <p className="text-center text-gray-700 mt-4 font-medium">
                   Healthy Oceans, Sustainable Futures
                 </p>
-
               </div>
             </div>
           </div>
@@ -384,9 +391,6 @@ const teamMembers = [
                         
                         {/* Top Section */}
                         <div className="flex-1 flex flex-col items-center justify-center">
-                          {/* Profile Image Area */}
-
-                          
                           {/* Name */}
                           <h3 className="text-lg font-bold text-white mb-2 transition-all duration-300 drop-shadow-lg">
                             {member.name}
