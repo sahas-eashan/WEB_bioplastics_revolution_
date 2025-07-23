@@ -19,7 +19,6 @@ const Header = () => {
     { name: 'About', href: '/about' },
     { name: 'Impact', href: '/impact' },
     { name: 'Events', href: '/events' },
-    { name: 'Team', href: '/team' },
     { name: 'Contact', href: '/contact' }
   ];
 
@@ -27,7 +26,7 @@ const Header = () => {
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
       scrolled 
         ? 'bg-green-900/95 backdrop-blur-lg shadow-2xl shadow-green-900/20' 
-        : 'bg-transparent'
+        : 'bg-transparent shadow-none'
     }`}>
       <div className="container mx-auto px-6">
         <div className="flex items-center justify-between h-20">
@@ -53,7 +52,7 @@ const Header = () => {
               <Link
                 key={item.name}
                 to={item.href}
-                className="relative text-green-100 hover:text-green-300 transition-all duration-300 group py-2 font-medium"
+                className="relative text-green-500 hover:text-green-600 transition-all duration-300 group py-2 font-medium"
                 style={{ animationDelay: `${index * 100}ms` }}
               >
                 {item.name}

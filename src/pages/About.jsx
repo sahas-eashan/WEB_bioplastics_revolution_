@@ -1,5 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Leaf, Heart, Users, Globe, Lightbulb, Target, Recycle, Waves, TreePine, Beaker, Megaphone, User } from 'lucide-react';
+import { useInView } from 'react-intersection-observer';
+
 
 export default function About() {
   const [isVisible, setIsVisible] = useState(false);
@@ -31,57 +33,68 @@ export default function About() {
   }, []);
 
 const teamMembers = [
-    {
-      id: 1,
-      name: "Team Member 1",
-      role: "Environmental Scientist & Project Lead",
-      description: "Leading our research initiatives and developing innovative seaweed-based solutions.",
-      icon: <Beaker className="w-6 h-6" />,
-      color: "from-green-400 to-emerald-600",
-      bgColor: "bg-green-100",
-      position: { top: '30%', left: '5%', transform: 'translate(-80%, -50%)' }
-    },
-    {
-      id: 2,
-      name: "Team Member 2", 
-      role: "Marine Biologist & Sustainability Expert",
-      description: "Specializing in ocean ecosystems and biodegradable material development.",
-      icon: <Waves className="w-6 h-6" />,
-      color: "from-blue-400 to-cyan-600",
-      bgColor: "bg-blue-100",
-      position: { top: '20%', left: '50%', transform: 'translate(-50%, -50%)' }
-    },
-    {
-      id: 3,
-      name: "Team Member 3",
-      role: "Community Outreach Coordinator",
-      description: "Building partnerships and spreading awareness about plastic pollution solutions.",
-      icon: <Megaphone className="w-6 h-6" />,
-      color: "from-purple-400 to-violet-600",
-      bgColor: "bg-purple-100",
-      position: { top: '30%', left: '95%', transform: 'translate(-20%, -50%)' }
-    },
-    {
-      id: 4,
-      name: "Team Member 4",
-      role: "Innovation & Technology Specialist",
-      description: "Developing cutting-edge production methods for sustainable alternatives.",
-      icon: <Lightbulb className="w-6 h-6" />,
-      color: "from-orange-400 to-red-500",
-      bgColor: "bg-orange-100",
-      position: { top: '75%', left: '25%', transform: 'translate(-50%, -50%)' }
-    },
-    {
-      id: 5,
-      name: "Team Member 5",
-      role: "Environmental Impact Analyst",
-      description: "Measuring and optimizing our environmental footprint and impact metrics.",
-      icon: <TreePine className="w-6 h-6" />,
-      color: "from-teal-400 to-green-600",
-      bgColor: "bg-teal-100",
-      position: { top: '75%', left: '75%', transform: 'translate(-50%, -50%)' }
-    }
-  ];
+  {
+    id: 1,
+    name: "Demitha Manawadu",
+    role: " Co-Founder & CEO",
+    description: "Overseeing strategy and leadership while driving the company’s mission.",
+    icon: <Beaker className="w-6 h-6" />,
+    color: "from-green-400 to-emerald-600",
+    bgColor: "bg-green-100",
+    profileImage: "images/demitha.avif",
+    backgroundImage: "images/demitha.avif",
+    position: { top: '30%', left: '5%', transform: 'translate(-80%, -50%)' }
+  },
+  {
+    id: 2,
+    name: "Banuka Liyanage",
+    role: "Co-Founder & Business Analyst",
+    description: "Responsible for analyzing market trends and aligning business strategies.",
+    icon: <Waves className="w-6 h-6" />,
+    color: "from-blue-400 to-cyan-600",
+    bgColor: "bg-blue-100",
+    profileImage: "images/banuka.avif",
+    backgroundImage: "images/banuka.avif",
+    position: { top: '20%', left: '50%', transform: 'translate(-50%, -50%)' }
+  },
+  {
+    id: 3,
+    name: "Benuri Edirisinghe",
+    role: "Co-Founder & Researcher",
+    description: "Conducts in-depth scientific research to develop.",
+    icon: <Megaphone className="w-6 h-6" />,
+    color: "from-purple-400 to-violet-600",
+    bgColor: "bg-purple-100",
+    profileImage: "images/benuri.avif",
+    backgroundImage: "images/benuri.avif",
+    position: { top: '30%', left: '95%', transform: 'translate(-20%, -50%)' }
+  },
+  {
+    id: 4,
+    name: "Sahas Eashan",
+    role: "Co-Founder & Technical Lead",
+    description: "Leads product development and integrates innovative technology into sustainable design.",
+    icon: <Lightbulb className="w-6 h-6" />,
+    color: "from-orange-400 to-red-500",
+    bgColor: "bg-orange-100",
+    profileImage: "./images/sahas%20eashan.avif",
+    backgroundImage: "./images/sahas%20eashan.avif",
+    position: { top: '75%', left: '25%', transform: 'translate(-50%, -50%)' }
+  },
+  {
+    id: 5,
+    name: "Ridmini Hasari",
+    role: "Co-Founder & Researcher",
+    description: "Explores sustainable materials and their applications.",
+    icon: <TreePine className="w-6 h-6" />,
+    color: "from-teal-400 to-green-600",
+    bgColor: "bg-teal-100",
+    profileImage: "images/hasari.avif",
+    backgroundImage: "images/hasari.avif",
+    position: { top: '75%', left: '75%', transform: 'translate(-50%, -50%)' }
+  }
+];
+
 
   const getCardStyle = (member) => {
     const isHovered = hoveredMember === member.id;
@@ -148,15 +161,30 @@ const teamMembers = [
                 </div>
               </div>
               
-              {/* Photo Space 1 - Mission Image */}
+              {/* Mission Image */}
               <div className="relative group">
-                <div className="bg-gradient-to-br from-green-200 to-blue-200 rounded-2xl h-80 flex items-center justify-center shadow-lg transform group-hover:scale-105 transition-transform duration-300">
-                  <div className="text-center">
-                    <Globe className="w-16 h-16 mx-auto text-green-600 mb-4 animate-pulse" />
-                    <p className="text-gray-600 font-medium">Mission Image</p>
-                    <p className="text-sm text-gray-500">Add your mission photo here</p>
-                  </div>
+                <img 
+                  src="images/mission-photo.jpg"
+                  alt="Our mission in action - seaweed research and development"
+                  className="w-full h-80 object-cover rounded-2xl shadow-lg transform group-hover:scale-105 transition-transform duration-300"
+                  onError={(e) => {
+                    // Fallback if image doesn't load
+                    e.target.style.display = 'none';
+                    e.target.nextSibling.style.display = 'flex';
+                  }}
+                />
+                {/* Fallback placeholder */}
+                <div className="w-full h-80 bg-gradient-to-br from-green-200 to-blue-200 rounded-2xl flex items-center justify-center shadow-lg transform group-hover:scale-105 transition-transform duration-300 overflow-hidden">
+                  <img
+                    src="images/mision.avif"
+                    alt="Our Mission"
+                    className="w-full h-full object-cover"
+                  />
                 </div>
+                <p className="text-center text-gray-700 mt-4 font-medium">
+                  Healthy Oceans, Sustainable Futures
+                </p>
+
               </div>
             </div>
           </div>
@@ -198,180 +226,276 @@ const teamMembers = [
         </div>
       </section>
 
-      {/* Revolutionary Team Section */}
-      <section ref={sectionRef} className="py-12 px-4 relative overflow-hidden h-screen bg-gradient-to-br from-indigo-900 via-purple-900 to-pink-900 flex flex-col">
-        {/* Dynamic Background */}
+      {/* Revolutionary Team Section - Connected Mirror Plates */}
+      <section ref={sectionRef} className="py-16 px-4 relative overflow-hidden min-h-screen bg-gradient-to-br from-slate-900 via-indigo-900 to-purple-900">
+        {/* Enhanced Background */}
         <div className="absolute inset-0">
-          <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 via-purple-500/10 to-pink-500/10 animate-pulse"></div>
+          {/* Subtle Light Rays */}
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/5 to-transparent transform -skew-y-12"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-cyan-400/10 to-transparent transform skew-y-12"></div>
           
           {/* Floating Particles */}
-          {[...Array(15)].map((_, i) => (
+          {[...Array(25)].map((_, i) => (
             <div
               key={i}
-              className={`absolute w-2 h-2 bg-white/20 rounded-full animate-float`}
+              className="absolute w-1 h-1 bg-white/40 rounded-full animate-float"
               style={{
                 left: `${Math.random() * 100}%`,
                 top: `${Math.random() * 100}%`,
-                animationDelay: `${Math.random() * 5}s`,
-                animationDuration: `${3 + Math.random() * 4}s`
+                animationDelay: `${Math.random() * 8}s`,
+                animationDuration: `${6 + Math.random() * 8}s`
               }}
             />
           ))}
           
-          {/* Mouse Follower Effect */}
+          {/* Dynamic Light Effect */}
           <div
-            className="absolute w-96 h-96 bg-gradient-radial from-cyan-400/20 via-purple-400/10 to-transparent rounded-full pointer-events-none transition-all duration-300 ease-out"
+            className="absolute w-96 h-96 bg-gradient-radial from-white/5 via-cyan-400/5 to-transparent rounded-full pointer-events-none transition-all duration-700 ease-out"
             style={{
               left: mousePos.x - 192,
               top: mousePos.y - 192,
-              transform: 'translate(0, 0)'
             }}
           />
         </div>
 
-        <div className="relative z-20 max-w-7xl mx-auto flex flex-col h-full">
-          <div className="text-center mb-8 flex-shrink-0">
-            <h2 className="text-5xl md:text-6xl font-bold text-white mb-4 animate-pulse">
-              Meet Our <span className="bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">Visionaries</span>
+        <div className="relative z-20 max-w-7xl mx-auto">
+          {/* Header */}
+          <div className="text-center mb-20">
+            <h2 className="text-6xl md:text-7xl font-bold text-white mb-6">
+              Meet Our <span className="bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">Visionaries</span>
             </h2>
-            <p className="text-lg text-gray-300 max-w-3xl mx-auto">
-              Five brilliant minds connected by innovation, scattered like stars across our universe of possibilities.
+            <p className="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
+              Five minds reflecting brilliance, united in one shining vision
             </p>
           </div>
 
-          {/* Constellation Layout */}
-          <div className="relative flex-1 mx-auto max-w-6xl w-full">
-            {/* Connecting Lines */}
-            <svg className="absolute inset-0 w-full h-full pointer-events-none opacity-30">
-              <defs>
-                <linearGradient id="lineGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                  <stop offset="0%" stopColor="#22d3ee" />
-                  <stop offset="50%" stopColor="#a855f7" />
-                  <stop offset="100%" stopColor="#ec4899" />
-                </linearGradient>
-              </defs>
-              {/* Dynamic connecting lines that animate */}
-              {teamMembers.map((member, index) => (
-                teamMembers.slice(index + 1).map((nextMember, nextIndex) => (
-                  <line
-                    key={`${member.id}-${nextMember.id}`}
-                    x1={member.position.left ? `${parseInt(member.position.left)}%` : `${100 - parseInt(member.position.right)}%`}
-                    y1={member.position.top ? `${parseInt(member.position.top)}%` : `${100 - parseInt(member.position.bottom)}%`}
-                    x2={nextMember.position.left ? `${parseInt(nextMember.position.left)}%` : `${100 - parseInt(nextMember.position.right)}%`}
-                    y2={nextMember.position.top ? `${parseInt(nextMember.position.top)}%` : `${100 - parseInt(nextMember.position.bottom)}%`}
-                    stroke="url(#lineGradient)"
-                    strokeWidth="1"
-                    className="animate-pulse"
-                  />
-                ))
-              )).flat()}
-            </svg>
+          {/* Connected Mirror Plates */}
+          <div className="max-w-6xl mx-auto perspective-2000">
+            <div className="flex justify-center">
+              <div className="relative flex">
+                {teamMembers.map((member, index) => (
+                  <div
+                    key={member.id}
+                    className="relative group cursor-pointer"
+                    onMouseEnter={() => setHoveredMember(member.id)}
+                    onMouseLeave={() => setHoveredMember(null)}
+                    style={{
+                      marginLeft: index > 0 ? '-2px' : '0',
+                      zIndex: hoveredMember === member.id ? 50 : 10 + index
+                    }}
+                  >
+                    {/* Trapezoid Mirror Plate */}
+                    <div 
+                      className={`
+                        relative mirror-plate transform-gpu transition-all duration-700 ease-out
+                        ${hoveredMember === member.id 
+                          ? 'scale-105 translate-y-2 shadow-2xl shadow-cyan-500/30' 
+                          : 'hover:scale-102 hover:translate-y-1'
+                        }
+                      `}
+                      style={{
+                        width: '240px',
+                        height: '400px',
+                        clipPath: 'polygon(15% 0%, 85% 0%, 95% 100%, 5% 100%)',
+                        background: `
+                          linear-gradient(135deg, 
+                            rgba(255,255,255,0.15) 0%, 
+                            rgba(255,255,255,0.05) 50%, 
+                            rgba(255,255,255,0.1) 100%
+                          )
+                        `,
+                        backdropFilter: 'blur(20px)',
+                        border: '1px solid rgba(255,255,255,0.2)',
+                      }}
+                    >
+                      {/* Individual Team Member Photo Background */}
+                      <div 
+                        className="absolute inset-0 opacity-60"
+                        style={{ clipPath: 'inherit' }}
+                      >
+                        {member.backgroundImage ? (
+                          <img 
+                            src={member.backgroundImage}
+                            alt={`${member.name} background`}
+                            className="w-full h-full object-cover"
+                            style={{ clipPath: 'inherit' }}
+                            onError={(e) => {
+                              // Fallback to gradient if image doesn't load
+                              e.target.style.display = 'none';
+                              e.target.nextSibling.style.display = 'block';
+                            }}
+                          />
+                        ) : null}
+                        {/* Fallback gradient background */}
+                        <div 
+                          className="w-full h-full bg-cover bg-center"
+                          style={{
+                            backgroundImage: `linear-gradient(135deg, ${member.color.replace('from-', '').replace(' to-', ', ')})`,
+                            clipPath: 'inherit',
+                            display: member.backgroundImage ? 'none' : 'block'
+                          }}
+                        >
+                          {/* Photo Placeholder */}
+                          <div className="absolute inset-0 flex items-center justify-center">
+                            <div className="text-center text-white/50">
+                              <User className="w-16 h-16 mx-auto mb-2 opacity-60" />
+                              <p className="text-sm font-medium">{member.name}</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
 
-            {teamMembers.map((member, index) => (
-              <div
-                key={member.id}
-                style={getCardStyle(member)}
-                className="group cursor-pointer"
-                onMouseEnter={() => setHoveredMember(member.id)}
-                onMouseLeave={() => setHoveredMember(null)}
-              >
-                {/* Orbital Ring */}
-                <div className={`absolute -inset-12 rounded-full border-2 border-gradient-to-r ${member.color} opacity-0 group-hover:opacity-100 transition-all duration-500 animate-spin-slow`} />
-                
-                {/* Main Card - Made larger */}
-                <div className={`relative w-80 bg-gradient-to-br ${member.color} rounded-full aspect-square p-1 shadow-2xl hover:shadow-cyan-500/25`}>
-                  {/* Inner Content Circle */}
-                  <div className="w-full h-full bg-black/80 backdrop-blur-md rounded-full flex flex-col items-center justify-center text-center p-6 relative overflow-hidden">
-                    
-                    {/* Animated Background Pattern */}
-                    <div className="absolute inset-0 opacity-10">
-                      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent animate-shimmer" />
-                    </div>
-                    
-                    {/* Photo Placeholder - Much larger for actual photos */}
-                    <div className={`relative w-28 h-28 bg-gradient-to-br ${member.color} rounded-full flex items-center justify-center mb-4 shadow-lg overflow-hidden`}>
-                      {/* Image placeholder background */}
-                      <div className="w-full h-full bg-gray-800/50 rounded-full flex flex-col items-center justify-center backdrop-blur-sm border-2 border-white/20">
-                        <User className="w-12 h-12 text-white/60 mb-1" />
-                        <span className="text-xs text-white/40 font-medium">Photo</span>
+                      {/* Colorful Border Separator */}
+                      {index < teamMembers.length - 1 && (
+                        <div 
+                          className="absolute top-0 right-0 w-1 h-full z-20"
+                          style={{
+                            background: `linear-gradient(to bottom, 
+                              #22d3ee 0%, 
+                              #a855f7 33%, 
+                              #ec4899 66%, 
+                              #f59e0b 100%
+                            )`,
+                            boxShadow: '0 0 20px rgba(34, 211, 238, 0.5)',
+                            filter: 'blur(0.5px)'
+                          }}
+                        />
+                      )}
+
+                      {/* Glass Shine Effect */}
+                      <div 
+                        className="absolute inset-0 shine-effect opacity-60"
+                        style={{
+                          background: `
+                            linear-gradient(45deg, 
+                              transparent 30%, 
+                              rgba(255,255,255,0.3) 50%, 
+                              transparent 70%
+                            )
+                          `,
+                          clipPath: 'inherit',
+                          animation: 'shine 4s ease-in-out infinite',
+                          animationDelay: `${index * 0.5}s`
+                        }}
+                      />
+
+                      {/* Content Layer */}
+                      <div className="relative h-full p-8 flex flex-col justify-between text-center z-10">
+                        
+                        {/* Top Section */}
+                        <div className="flex-1 flex flex-col items-center justify-center">
+                          {/* Profile Image Area */}
+
+                          
+                          {/* Name */}
+                          <h3 className="text-lg font-bold text-white mb-2 transition-all duration-300 drop-shadow-lg">
+                            {member.name}
+                          </h3>
+                          
+                          {/* Role */}
+                          <p className="text-sm text-gray-200 font-medium leading-tight px-2 text-shadow">
+                            {member.role}
+                          </p>
+                        </div>
+                        
+                        {/* Bottom Section - Expandable Description */}
+                        <div className={`
+                          transition-all duration-500 overflow-hidden
+                          ${hoveredMember === member.id 
+                            ? 'max-h-24 opacity-100 transform translate-y-0' 
+                            : 'max-h-0 opacity-0 transform translate-y-4'
+                          }
+                        `}>
+                          <div className="border-t border-white/30 pt-3 mt-3">
+                            <p className="text-xs text-gray-300 leading-relaxed">
+                              {member.description}
+                            </p>
+                          </div>
+                        </div>
                       </div>
-                      
-                      {/* Corner icon indicator */}
-                      <div className={`absolute -bottom-2 -right-2 w-8 h-8 bg-gradient-to-br ${member.color} rounded-full flex items-center justify-center shadow-lg border-2 border-white/30`}>
-                        {member.icon}
-                      </div>
+
+                      {/* Hover Glow Effect */}
+                      <div className={`
+                        absolute inset-0 transition-opacity duration-300
+                        bg-gradient-to-br ${member.color} 
+                        ${hoveredMember === member.id ? 'opacity-20' : 'opacity-0'}
+                      `} 
+                      style={{ clipPath: 'inherit' }} />
+
+                      {/* Mirror Reflection */}
+                      <div 
+                        className="absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-white/5 pointer-events-none"
+                        style={{ clipPath: 'inherit' }}
+                      />
                     </div>
-                    
-                    <h3 className="text-lg font-bold text-white mb-2">{member.name}</h3>
-                    <p className="text-sm text-gray-300 font-medium mb-3 leading-tight">{member.role}</p>
-                    
-                    {/* Expandable Description */}
-                    <div className={`transition-all duration-500 overflow-hidden ${hoveredMember === member.id ? 'max-h-32 opacity-100' : 'max-h-0 opacity-0'}`}>
-                      <p className="text-xs text-gray-400 leading-relaxed px-2">{member.description}</p>
-                    </div>
-                    
-                    {/* Pulse Effect */}
-                    <div className={`absolute inset-0 rounded-full bg-gradient-to-br ${member.color} opacity-0 animate-ping ${hoveredMember === member.id ? 'opacity-20' : ''}`} />
                   </div>
-                </div>
-
-                {/* Floating Elements */}
-                <div className="absolute -top-4 -right-4 w-8 h-8 bg-cyan-400/30 rounded-full animate-float" style={{animationDelay: `${index * 0.5}s`}} />
-                <div className="absolute -bottom-4 -left-4 w-6 h-6 bg-purple-400/30 rounded-full animate-float" style={{animationDelay: `${index * 0.7}s`}} />
-              </div>
-            ))}
-
-            {/* Central Connection Hub */}
-            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-              <div className="w-16 h-16 bg-gradient-to-r from-cyan-400 to-purple-400 rounded-full animate-pulse shadow-2xl shadow-purple-500/50 flex items-center justify-center">
-                <Users className="w-8 h-8 text-white animate-spin-slow" />
+                ))}
               </div>
             </div>
           </div>
+          
         </div>
 
-        {/* Custom CSS for animations */}
+        {/* Advanced Custom CSS */}
         <style jsx>{`
+          .perspective-2000 {
+            perspective: 2000px;
+          }
+          
+          .mirror-plate {
+            transform-style: preserve-3d;
+          }
+          
+          .text-shadow {
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+          }
+          
+          @keyframes shine {
+            0% { 
+              transform: translateX(-100%) skewX(-15deg); 
+              opacity: 0;
+            }
+            50% { 
+              transform: translateX(0%) skewX(-15deg); 
+              opacity: 1;
+            }
+            100% { 
+              transform: translateX(100%) skewX(-15deg); 
+              opacity: 0;
+            }
+          }
+          
           @keyframes float {
-            0%, 100% { transform: translateY(0px) rotate(0deg); }
-            50% { transform: translateY(-20px) rotate(180deg); }
+            0%, 100% { 
+              transform: translateY(0px) rotate(0deg); 
+              opacity: 0.4;
+            }
+            50% { 
+              transform: translateY(-20px) rotate(180deg); 
+              opacity: 0.8;
+            }
           }
-          @keyframes shimmer {
-            0% { transform: translateX(-100%); }
-            100% { transform: translateX(100%); }
-          }
+          
           .animate-float {
-            animation: float 4s ease-in-out infinite;
+            animation: float 8s ease-in-out infinite;
           }
-          .animate-shimmer {
-            animation: shimmer 2s ease-in-out infinite;
+          
+          .bg-gradient-radial {
+            background: radial-gradient(circle, var(--tw-gradient-stops));
           }
-          .animate-spin-slow {
-            animation: spin 8s linear infinite;
+          
+          /* Enhance glass effect */
+          .mirror-plate::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.8), transparent);
+            clip-path: inherit;
           }
         `}</style>
-      </section>
-
-      {/* Impact Statistics */}
-      <section className="py-16 px-4 bg-gradient-to-r from-green-600 to-blue-600">
-        <div className="max-w-6xl mx-auto text-center">
-          <h2 className="text-4xl font-bold text-white mb-12">Our Impact So Far</h2>
-          
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 text-white">
-              <div className="text-4xl font-bold mb-2">1000+</div>
-              <div className="text-lg">Plastic Items Replaced</div>
-            </div>
-            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 text-white">
-              <div className="text-4xl font-bold mb-2">50+</div>
-              <div className="text-lg">Community Partners</div>
-            </div>
-            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 text-white">
-              <div className="text-4xl font-bold mb-2">100%</div>
-              <div className="text-lg">Biodegradable Solutions</div>
-            </div>
-          </div>
-        </div>
       </section>
 
       {/* Call to Action */}

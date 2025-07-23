@@ -4,14 +4,14 @@ import Header from "./components/Header"; // Changed from Navbar to Header
 import Footer from "./components/Footer"; // New Footer component
 import Home from "./pages/Home"; 
 import About from "./pages/About"; 
-import Impact from "./pages/Impact"; 
-import Team from "./pages/Team"; 
+import Impact from "./pages/Impact";  
 import Events from "./pages/Events"; 
 import Contact from "./pages/Contact"; 
 import './styles/index.css';  
 import OceanCleanupPage from './pages/ocean_clean';
 import EcoSolutionsPage from './pages/eco_solutions';    
 import CommunityImpactPage from './pages/community_impact';
+import PhotoGallery from './pages/PhotoGallery';
 
 export default function App() {     
     return (         
@@ -22,14 +22,13 @@ export default function App() {
                     <Routes>                         
                         <Route path="/" element={<Home />} />                         
                         <Route path="/about" element={<About />} />                         
-                        <Route path="/impact" element={<Impact />} />                         
-                        <Route path="/team" element={<Team />} />                         
+                        <Route path="/impact" element={<Impact />} />                                             
                         <Route path="/events" element={<Events />} />                         
                         <Route path="/contact" element={<Contact />} />                         
                         <Route path="/ocean_clean" element={<OceanCleanupPage />} />
                         <Route path="/eco_solutions" element={<EcoSolutionsPage />} />
                         <Route path="/community_impact" element={<CommunityImpactPage />} />
-
+                        <Route path="/PhotoGallery" element={<PhotoGallery />} />
                     </Routes>                 
                 </main>                 
                 <Footer />  {/* This is your new green footer */}
