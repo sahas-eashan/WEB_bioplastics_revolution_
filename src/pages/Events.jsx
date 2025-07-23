@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom'; 
+
 export default function Events() {
     return (
         <div className="min-h-screen bg-gray-50">
@@ -113,7 +114,7 @@ export default function Events() {
                     <h3 className="text-xl font-bold text-gray-800 mb-4">🌊♻️ Our Achievements</h3>
                     <ul className="text-gray-700 list-disc list-inside space-y-2">
                         <li>🏅 Finalists – PLEASE Hack 2025, South Asia</li>
-                        <li>🌱 “Best Environment Project” – Tyumen Ideathon, Russia</li>
+                        <li>🌱 "Best Environment Project" – Tyumen Ideathon, Russia</li>
                     </ul>
 
                     <div className="mt-6 space-y-2 text-sm text-gray-600">
@@ -128,18 +129,17 @@ export default function Events() {
                     </div>
                     </div>
 
-                    {/* Right Content */}
+                    {/* Right Content - FIXED: Using Link instead of <a> */}
                     <div className="flex justify-center items-center">
-                    <a
-                        href="/PhotoGallery"
+                    <Link
+                        to="/PhotoGallery"
                         className="inline-block bg-green-600 text-white px-6 py-4 rounded-xl font-semibold shadow hover:bg-green-700 transition text-lg"
                     >
                         📷 View Our Photo Gallery
-                    </a>
+                    </Link>
                     </div>
                 </div>
                 </div>
-
 
                 {/* Get Involved Section */}
                 <div className="bg-gradient-to-r from-green-50 to-blue-50 rounded-xl p-8">

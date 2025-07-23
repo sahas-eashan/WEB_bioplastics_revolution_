@@ -172,8 +172,7 @@ export default function EcoSolutionsPage() {
                 <div className="space-y-4">
                   <div className="bg-gradient-to-br from-green-100 to-green-200 rounded-xl h-40 flex items-center justify-center">
                     <img
-                      src="images/Screenshot 2025-07-23 084716.png"
-                      
+                      src={`${import.meta.env.BASE_URL}Screenshot 2025-07-23 084716.png`}
                       alt="Lab Equipment"
                       className="w-full h-full object-cover object-bottom rounded-xl transition-transform duration-300 hover:scale-105"
                     />

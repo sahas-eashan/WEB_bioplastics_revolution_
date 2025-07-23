@@ -38,7 +38,7 @@ export default function OceanCleanupPage() {
             <div className="bg-white p-4 rounded-2xl shadow-2xl">
                 <div className="w-full h-80 rounded-xl overflow-hidden">
                 <img
-                    src="/images/download.webp"
+                    src={`${import.meta.env.BASE_URL}download.webp`}
                     alt="Ocean Cleanup"
                     className="w-full h-full object-cover"
                 />
