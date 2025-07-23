@@ -56,7 +56,7 @@ export default function Home() {
               <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Waves className="w-8 h-8 text-white" />
               </div>
-              <h3 className="text-2xl font-bold text-gray-800 mb-2 text-center">Ocean Cleanup</h3>
+              <h3 className="text-2xl font-bold text-gray-800 mb-2 text-center">Beach Cleanup</h3>
               <p className="text-gray-600 text-center">Reducing plastic pollution in our oceans through sustainable alternatives</p>
             </Link>
             <Link to="/eco_solutions" className="block bg-white/70 backdrop-blur-sm rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">

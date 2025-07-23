@@ -1,7 +1,15 @@
 import React from 'react';
 import { Leaf, ArrowLeft, Beaker, Recycle, TreePine, Factory } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 export default function EcoSolutionsPage() {
+  const navigate = useNavigate(); // Actually use the hook you imported
+  
+  const handleBackClick = () => {
+    navigate(-1); // Replace with your actual initiatives route
+    // Or use navigate(-1) to go back to previous page
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-green-50 to-white">
       {/* Hero Section */}
@@ -9,10 +17,15 @@ export default function EcoSolutionsPage() {
         <div className="absolute inset-0 bg-gradient-to-r from-green-600/20 to-emerald-600/20"></div>
         <div className="relative px-6 py-20">
           <div className="max-w-6xl mx-auto">
-            <button className="flex items-center space-x-2 text-green-600 hover:text-green-800 mb-8 transition-colors">
+        
+            <button 
+              className="flex items-center space-x-2 text-green-600 hover:text-green-800 mb-8 transition-colors"
+              onClick={handleBackClick}
+            >
               <ArrowLeft className="w-5 h-5" />
               <span>Back to Initiatives</span>
             </button>
+
             
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div>
@@ -30,7 +43,11 @@ export default function EcoSolutionsPage() {
               <div className="relative">
                 <div className="bg-white p-4 rounded-2xl shadow-2xl">
                   <div className="w-full h-80 bg-gradient-to-br from-green-100 to-emerald-100 rounded-xl flex items-center justify-center">
-                    <span className="text-gray-500 text-lg">Seaweed Bioplastic Hero Image</span>
+                    <img
+                      src="/images/image.png"
+                      alt="Seaweed Bioplastic"
+                      className="w-full h-full object-cover rounded-xl"
+                    />
                   </div>
                 </div>
                 <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-green-200 rounded-full opacity-50"></div>
@@ -58,7 +75,11 @@ export default function EcoSolutionsPage() {
               </div>
               <div className="mb-4">
                 <div className="w-full h-32 bg-gradient-to-br from-emerald-100 to-emerald-200 rounded-xl flex items-center justify-center">
-                  <span className="text-gray-600">Seaweed Harvesting</span>
+                      <img
+                src="/images/Screenshot 2025-07-23 075111.png"
+                alt="Cleanup Team"
+                className="w-full h-full object-cover rounded-xl transition-transform duration-300 hover:scale-105"
+                />
                 </div>
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-2">Sustainable Harvesting</h3>
@@ -71,7 +92,11 @@ export default function EcoSolutionsPage() {
               </div>
               <div className="mb-4">
                 <div className="w-full h-32 bg-gradient-to-br from-green-100 to-green-200 rounded-xl flex items-center justify-center">
-                  <span className="text-gray-600">Bio Processing</span>
+                    <img
+                      src="/images/Screenshot 2025-07-23 075216.png"
+                      alt="Extraction Process"
+                      className="w-full h-full object-cover object-bottom rounded-xl transition-transform duration-300 hover:scale-105 "
+                    />
                 </div>
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-2">Bio Processing</h3>
@@ -84,7 +109,11 @@ export default function EcoSolutionsPage() {
               </div>
               <div className="mb-4">
                 <div className="w-full h-32 bg-gradient-to-br from-teal-100 to-teal-200 rounded-xl flex items-center justify-center">
-                  <span className="text-gray-600">Material Formation</span>
+                    <img
+                      src="/images/Screenshot 2025-07-23 075556.png"
+                      alt="Extraction Process"
+                      className="w-full h-full object-cover object-bottom rounded-xl transition-transform duration-300 hover:scale-105"
+                    />
                 </div>
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-2">Material Formation</h3>
@@ -97,7 +126,11 @@ export default function EcoSolutionsPage() {
               </div>
               <div className="mb-4">
                 <div className="w-full h-32 bg-gradient-to-br from-cyan-100 to-cyan-200 rounded-xl flex items-center justify-center">
-                  <span className="text-gray-600">Final Products</span>
+                  <img
+                    src="/images/products.png"
+                    alt="Extraction Process"
+                    className="w-full h-full object-cover object-center rounded-xl transition-transform duration-300 hover:scale-105"
+                  />
                 </div>
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-2">Product Creation</h3>
@@ -138,10 +171,19 @@ export default function EcoSolutionsPage() {
               <div className="grid grid-cols-2 gap-4">
                 <div className="space-y-4">
                   <div className="bg-gradient-to-br from-green-100 to-green-200 rounded-xl h-40 flex items-center justify-center">
-                    <span className="text-gray-600">Lab Equipment</span>
+                    <img
+                      src="/images/Screenshot 2025-07-23 084716.png"
+                      
+                      alt="Lab Equipment"
+                      className="w-full h-full object-cover object-bottom rounded-xl transition-transform duration-300 hover:scale-105"
+                    />
                   </div>
                   <div className="bg-gradient-to-br from-emerald-100 to-emerald-200 rounded-xl h-24 flex items-center justify-center">
-                    <span className="text-gray-600">Research Team</span>
+                    <img
+                      src="/images/Screenshot 2025-07-23 084958.png"
+                      alt="Research Team"
+                      className="w-full h-full object-cover  rounded-xl transition-transform duration-300 hover:scale-105"
+                    />
                   </div>
                 </div>
                 <div className="space-y-4 mt-8">
@@ -168,7 +210,11 @@ export default function EcoSolutionsPage() {
             <div className="grid md:grid-cols-3 gap-8">
               <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
                 <div className="w-full h-48 bg-gradient-to-br from-green-100 to-green-200 rounded-xl mb-6 flex items-center justify-center">
-                  <span className="text-gray-600">Food Packaging</span>
+                  <img
+                    src="/images/p1.png"
+                    alt="Food Packaging"
+                    className="w-full h-full object-cover rounded-xl transition-transform duration-300 hover:scale-105"
+                  />
                 </div>
                 <h3 className="text-2xl font-bold text-gray-900 mb-4">Food Packaging</h3>
                 <p className="text-gray-700 mb-4">
@@ -183,7 +229,11 @@ export default function EcoSolutionsPage() {
 
               <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
                 <div className="w-full h-48 bg-gradient-to-br from-emerald-100 to-emerald-200 rounded-xl mb-6 flex items-center justify-center">
-                  <span className="text-gray-600">Shopping Bags</span>
+                    <img
+                      src="/images/p2.png"
+                      alt="Shopping Bags"
+                      className="w-full h-full object-cover rounded-xl transition-transform duration-300 hover:scale-105"
+                    />
                 </div>
                 <h3 className="text-2xl font-bold text-gray-900 mb-4">Shopping Bags</h3>
                 <p className="text-gray-700 mb-4">
@@ -198,7 +248,11 @@ export default function EcoSolutionsPage() {
 
               <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
                 <div className="w-full h-48 bg-gradient-to-br from-teal-100 to-teal-200 rounded-xl mb-6 flex items-center justify-center">
-                  <span className="text-gray-600">Agricultural Uses</span>
+                    <img
+                        src="/images/p3.png"
+                        alt="Agricultural Products"
+                        className="w-full h-full object-cover rounded-xl transition-transform duration-300 hover:scale-105"
+                    />
                 </div>
                 <h3 className="text-2xl font-bold text-gray-900 mb-4">Agricultural Products</h3>
                 <p className="text-gray-700 mb-4">
@@ -283,7 +337,11 @@ export default function EcoSolutionsPage() {
             <div>
               <div className="bg-white p-6 rounded-2xl shadow-xl">
                 <div className="w-full h-80 bg-gradient-to-br from-green-200 to-emerald-300 rounded-xl flex items-center justify-center">
-                  <span className="text-white text-xl font-semibold">Future Bioplastic Innovations</span>
+                  <img
+                    src="/images/innovative.png"
+                    alt="Future Innovations"
+                    className="w-full h-full object-cover rounded-xl transition-transform duration-300 hover:scale-105"
+                  />
                 </div>
               </div>
             </div>

@@ -1,7 +1,14 @@
 import React from 'react';
 import { Heart, ArrowLeft, Users, Briefcase, GraduationCap, Lightbulb, TrendingUp, MapPin } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 export default function CommunityImpactPage() {
+  const navigate = useNavigate();
+
+  const handleBackClick = () => {
+    navigate(-1);
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-purple-50 to-white">
       {/* Hero Section */}
@@ -9,7 +16,7 @@ export default function CommunityImpactPage() {
         <div className="absolute inset-0 bg-gradient-to-r from-purple-600/20 to-pink-600/20"></div>
         <div className="relative px-6 py-20">
           <div className="max-w-6xl mx-auto">
-            <button className="flex items-center space-x-2 text-purple-600 hover:text-purple-800 mb-8 transition-colors">
+            <button className="flex items-center space-x-2 text-purple-600 hover:text-purple-800 mb-8 transition-colors" onClick={handleBackClick}>
               <ArrowLeft className="w-5 h-5" />
               <span>Back to Initiatives</span>
             </button>
@@ -30,7 +37,11 @@ export default function CommunityImpactPage() {
               <div className="relative">
                 <div className="bg-white p-4 rounded-2xl shadow-2xl">
                   <div className="w-full h-80 bg-gradient-to-br from-purple-100 to-pink-100 rounded-xl flex items-center justify-center">
-                    <span className="text-gray-500 text-lg">Community Impact Hero Image</span>
+                    <img
+                      src="/images/com.png"
+                      alt="Community Impact"
+                      className="w-full h-full object-cover object-top rounded-xl"
+                    />
                   </div>
                 </div>
                 <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-purple-200 rounded-full opacity-50"></div>
@@ -80,18 +91,34 @@ export default function CommunityImpactPage() {
               <div className="grid grid-cols-2 gap-4">
                 <div className="space-y-4">
                   <div className="bg-gradient-to-br from-emerald-100 to-emerald-200 rounded-xl h-40 flex items-center justify-center">
-                    <span className="text-gray-600">Seaweed Farm</span>
+                    <img
+                      src="/images/farm.png"
+                      alt="Training Session"
+                      className="w-full h-full object-cover rounded-xl"
+                    />
                   </div>
                   <div className="bg-gradient-to-br from-teal-100 to-teal-200 rounded-xl h-32 flex items-center justify-center">
-                    <span className="text-gray-600">Training Session</span>
+                    <img
+                      src="/images/training.png"
+                      alt="Training Session"
+                      className="w-full h-full object-cover rounded-xl"
+                    />
                   </div>
                 </div>
                 <div className="space-y-4 mt-8">
                   <div className="bg-gradient-to-br from-cyan-100 to-cyan-200 rounded-xl h-32 flex items-center justify-center">
-                    <span className="text-gray-600">Farmers</span>
+                    <img
+                      src="/images/farmer.jpg"
+                      alt="Seaweed Harvest"
+                      className="w-full h-full object-cover rounded-xl"
+                    />
                   </div>
                   <div className="bg-gradient-to-br from-purple-100 to-purple-200 rounded-xl h-40 flex items-center justify-center">
-                    <span className="text-gray-600">Harvest</span>
+                    <img
+                      src="/images/harvest.webp"
+                      alt="Seaweed Harvest"
+                      className="w-full h-full object-cover rounded-xl"
+                    />
                   </div>
                 </div>
               </div>
@@ -113,10 +140,14 @@ export default function CommunityImpactPage() {
                   <Briefcase className="text-white w-8 h-8" />
                 </div>
                 <div className="w-full h-32 bg-gradient-to-br from-emerald-100 to-emerald-200 rounded-xl mb-4 flex items-center justify-center">
-                  <span className="text-gray-600 text-sm">Farming Jobs</span>
+                  <img
+                    src="/images/job1.webp"
+                    alt="Seaweed Farm"
+                    className="w-full h-full object-cover rounded-xl"
+                  />
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-3">Seaweed Farming</h3>
-                <p className="text-gray-600 text-sm mb-3">350+ jobs created</p>
+
                 <ul className="text-sm text-gray-600 space-y-1">
                   <li>• Farm management</li>
                   <li>• Cultivation specialists</li>
@@ -129,10 +160,14 @@ export default function CommunityImpactPage() {
                   <TrendingUp className="text-white w-8 h-8" />
                 </div>
                 <div className="w-full h-32 bg-gradient-to-br from-blue-100 to-blue-200 rounded-xl mb-4 flex items-center justify-center">
-                  <span className="text-gray-600 text-sm">Processing</span>
+                  <img
+                    src="/images/job2.webp"
+                    alt="Processing & Manufacturing"
+                    className="w-full h-full object-cover rounded-xl"
+                  />
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-3">Processing & Manufacturing</h3>
-                <p className="text-gray-600 text-sm mb-3">200+ jobs created</p>
+
                 <ul className="text-sm text-gray-600 space-y-1">
                   <li>• Processing technicians</li>
                   <li>• Quality control</li>
@@ -145,10 +180,14 @@ export default function CommunityImpactPage() {
                   <Lightbulb className="text-white w-8 h-8" />
                 </div>
                 <div className="w-full h-32 bg-gradient-to-br from-purple-100 to-purple-200 rounded-xl mb-4 flex items-center justify-center">
-                  <span className="text-gray-600 text-sm">Innovation</span>
+                  <img
+                    src="/images/job3.webp"
+                    alt="Research & Innovation"
+                    className="w-full h-full object-cover rounded-xl"
+                  />
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-3">Research & Innovation</h3>
-                <p className="text-gray-600 text-sm mb-3">75+ jobs created</p>
+
                 <ul className="text-sm text-gray-600 space-y-1">
                   <li>• Research scientists</li>
                   <li>• Lab technicians</li>
@@ -161,10 +200,14 @@ export default function CommunityImpactPage() {
                   <Users className="text-white w-8 h-8" />
                 </div>
                 <div className="w-full h-32 bg-gradient-to-br from-pink-100 to-pink-200 rounded-xl mb-4 flex items-center justify-center">
-                  <span className="text-gray-600 text-sm">Support</span>
+                    <img
+                      src="/images/job4.png"
+                      alt="Support Services"
+                      className="w-full h-full object-cover rounded-xl"
+                    />
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-3">Support Services</h3>
-                <p className="text-gray-600 text-sm mb-3">125+ jobs created</p>
+
                 <ul className="text-sm text-gray-600 space-y-1">
                   <li>• Community coordinators</li>
                   <li>• Training facilitators</li>
@@ -180,14 +223,26 @@ export default function CommunityImpactPage() {
               <div className="bg-white p-6 rounded-2xl shadow-xl">
                 <div className="grid grid-cols-2 gap-4 mb-4">
                   <div className="bg-gradient-to-br from-blue-100 to-blue-200 rounded-xl h-24 flex items-center justify-center">
-                    <span className="text-gray-600 text-sm">Classroom</span>
+                    <img
+                      src="/images/c1.png"
+                      alt="Education"
+                      className="w-full h-full object-cover rounded-xl"
+                    />
                   </div>
                   <div className="bg-gradient-to-br from-purple-100 to-purple-200 rounded-xl h-24 flex items-center justify-center">
-                    <span className="text-gray-600 text-sm">Workshop</span>
+                    <img
+                      src="/images/c2.png"
+                      alt="Workshop"
+                      className="w-full h-full object-cover rounded-xl"
+                    />
                   </div>
                 </div>
                 <div className="w-full h-48 bg-gradient-to-br from-emerald-200 to-teal-300 rounded-xl flex items-center justify-center">
-                  <span className="text-white text-lg font-semibold">Education Programs</span>
+                    <img
+                      src="/images/c3.png"
+                      alt="Community Engagement"
+                      className="w-full h-full object-cover rounded-xl"
+                    />
                 </div>
               </div>
             </div>
@@ -229,36 +284,37 @@ export default function CommunityImpactPage() {
             </div>
           </div>
 
-          {/* Community Impact Statistics */}
-          <div className="bg-gradient-to-r from-emerald-600 to-purple-600 rounded-3xl p-12 text-white mb-20">
-            <div className="text-center mb-12">
-              <h2 className="text-4xl font-bold mb-4">Our Community Impact</h2>
-              <p className="text-xl opacity-90">Measurable change in coastal communities</p>
-            </div>
-            
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-              <div className="text-center">
-                <div className="text-5xl font-bold mb-2">750+</div>
-                <div className="text-xl">Jobs Created</div>
-                <div className="text-sm opacity-75 mt-2">Across all programs</div>
-              </div>
-              <div className="text-center">
-                <div className="text-5xl font-bold mb-2">45</div>
-                <div className="text-xl">Communities</div>
-                <div className="text-sm opacity-75 mt-2">Directly impacted</div>
-              </div>
-              <div className="text-center">
-                <div className="text-5xl font-bold mb-2">2,500+</div>
-                <div className="text-xl">People Trained</div>
-                <div className="text-sm opacity-75 mt-2">In various skills</div>
-              </div>
-              <div className="text-center">
-                <div className="text-5xl font-bold mb-2">40%</div>
-                <div className="text-xl">Income Increase</div>
-                <div className="text-sm opacity-75 mt-2">Average for participants</div>
-              </div>
-            </div>
-          </div>
+{/* Community Impact Highlights */}
+<div className="bg-gradient-to-r from-emerald-600 to-purple-600 rounded-3xl p-12 text-white mb-20">
+  <div className="text-center mb-12">
+    <h2 className="text-4xl font-bold mb-4">How We Empower Coastal Communities</h2>
+    <p className="text-xl opacity-90">Real-world progress toward sustainable livelihoods</p>
+  </div>
+
+  <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+    <div className="text-center">
+      <div className="text-5xl font-bold mb-2">320+</div>
+      <div className="text-xl">Seaweed Farmers</div>
+      <div className="text-sm opacity-75 mt-2">Trained and supported</div>
+    </div>
+    <div className="text-center">
+      <div className="text-5xl font-bold mb-2">85%</div>
+      <div className="text-xl">Women Involved</div>
+      <div className="text-sm opacity-75 mt-2">In leadership and farming roles</div>
+    </div>
+    <div className="text-center">
+      <div className="text-5xl font-bold mb-2">28</div>
+      <div className="text-xl">Coastal Villages</div>
+      <div className="text-sm opacity-75 mt-2">Engaged in programs</div>
+    </div>
+    <div className="text-center">
+      <div className="text-5xl font-bold mb-2">3x</div>
+      <div className="text-xl">Income Growth</div>
+      <div className="text-sm opacity-75 mt-2">Compared to traditional fishing</div>
+    </div>
+  </div>
+</div>
+
 
           {/* Local Partnerships */}
           <div className="mb-20">
@@ -279,7 +335,7 @@ export default function CommunityImpactPage() {
                   Collaboration with municipal and regional authorities to align our programs with local development priorities and regulations.
                 </p>
                 <div className="mt-4 pt-4 border-t border-gray-100">
-                  <p className="text-sm text-gray-600">15 government partnerships</p>
+
                 </div>
               </div>
 
@@ -292,7 +348,7 @@ export default function CommunityImpactPage() {
                   Working with fishing cooperatives, women's groups, and youth organizations to ensure inclusive participation in our programs.
                 </p>
                 <div className="mt-4 pt-4 border-t border-gray-100">
-                  <p className="text-sm text-gray-600">30+ community groups</p>
+
                 </div>
               </div>
 
@@ -305,64 +361,7 @@ export default function CommunityImpactPage() {
                   Partnerships with schools, universities, and research centers to provide ongoing education and foster innovation in local communities.
                 </p>
                 <div className="mt-4 pt-4 border-t border-gray-100">
-                  <p className="text-sm text-gray-600">12 educational partners</p>
                 </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Success Stories */}
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">Success Stories</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-12">
-              Real stories from community members whose lives have been transformed through our programs.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-12">
-            <div className="bg-gradient-to-br from-blue-50 to-cyan-50 p-8 rounded-2xl">
-              <div className="flex items-center space-x-4 mb-6">
-                <div className="w-16 h-16 bg-gradient-to-br from-blue-400 to-cyan-400 rounded-full flex items-center justify-center">
-                  <span className="text-white text-xl font-bold">MS</span>
-                </div>
-                <div>
-                  <h3 className="text-2xl font-bold text-gray-900">Maria Santos</h3>
-                  <p className="text-gray-600">Seaweed Farm Manager</p>
-                </div>
-              </div>
-              <div className="w-full h-48 bg-gradient-to-br from-blue-200 to-cyan-200 rounded-xl mb-6 flex items-center justify-center">
-                <span className="text-gray-600">Maria's Farm</span>
-              </div>
-              <p className="text-gray-700 italic mb-4">
-                "Before joining the program, my family struggled to make ends meet from traditional fishing. Now I manage my own seaweed farm and employ 12 people from my village. My children can go to university because of this opportunity."
-              </p>
-              <div className="text-sm text-gray-600">
-                <p>• Farm established in 2023</p>
-                <p>• 300% income increase</p>
-                <p>• Employs 12 community members</p>
-              </div>
-            </div>
-
-            <div className="bg-gradient-to-br from-emerald-50 to-teal-50 p-8 rounded-2xl">
-              <div className="flex items-center space-x-4 mb-6">
-                <div className="w-16 h-16 bg-gradient-to-br from-emerald-400 to-teal-400 rounded-full flex items-center justify-center">
-                  <span className="text-white text-xl font-bold">JR</span>
-                </div>
-                <div>
-                  <h3 className="text-2xl font-bold text-gray-900">Jose Rodriguez</h3>
-                  <p className="text-gray-600">Processing Plant Supervisor</p>
-                </div>
-              </div>
-              <div className="w-full h-48 bg-gradient-to-br from-emerald-200 to-teal-200 rounded-xl mb-6 flex items-center justify-center">
-                <span className="text-gray-600">Processing Facility</span>
-              </div>
-              <p className="text-gray-700 italic mb-4">
-                "I went from being unemployed to supervising our local processing plant. The technical training program gave me skills I never thought I could learn. Now I'm helping train the next generation of workers."
-              </p>
-              <div className="text-sm text-gray-600">
-                <p>• Completed 6-month training program</p>
-                <p>• Promoted to supervisor within 1 year</p>
-                <p>• Trains 20+ new workers annually</p>
               </div>
             </div>
           </div>
