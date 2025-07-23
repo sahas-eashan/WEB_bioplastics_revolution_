@@ -1,8 +1,8 @@
 import React from 'react';
 
 const photos = [
-  '/images/im1.jpeg',
-  '/images/im2.jpeg',
+  `${import.meta.env.BASE_URL}im1.jpeg`,
+  `${import.meta.env.BASE_URL}im2.jpeg`,
   // Add more photo paths
 ];
 

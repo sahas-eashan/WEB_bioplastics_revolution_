@@ -38,7 +38,7 @@ export default function CommunityImpactPage() {
                 <div className="bg-white p-4 rounded-2xl shadow-2xl">
                   <div className="w-full h-80 bg-gradient-to-br from-purple-100 to-pink-100 rounded-xl flex items-center justify-center">
                     <img
-                      src="/images/com.png"
+                      src={`${import.meta.env.BASE_URL}com.png`}
                       alt="Community Impact"
                       className="w-full h-full object-cover object-top rounded-xl"
                     />
@@ -92,14 +92,14 @@ export default function CommunityImpactPage() {
                 <div className="space-y-4">
                   <div className="bg-gradient-to-br from-emerald-100 to-emerald-200 rounded-xl h-40 flex items-center justify-center">
                     <img
-                      src="/images/farm.png"
+                      src={`${import.meta.env.BASE_URL}farm.png`}
                       alt="Training Session"
                       className="w-full h-full object-cover rounded-xl"
                     />
                   </div>
                   <div className="bg-gradient-to-br from-teal-100 to-teal-200 rounded-xl h-32 flex items-center justify-center">
                     <img
-                      src="/images/training.png"
+                      src={`${import.meta.env.BASE_URL}training.png`}
                       alt="Training Session"
                       className="w-full h-full object-cover rounded-xl"
                     />
@@ -108,14 +108,14 @@ export default function CommunityImpactPage() {
                 <div className="space-y-4 mt-8">
                   <div className="bg-gradient-to-br from-cyan-100 to-cyan-200 rounded-xl h-32 flex items-center justify-center">
                     <img
-                      src="/images/farmer.jpg"
+                      src={`${import.meta.env.BASE_URL}farmer.jpg`}
                       alt="Seaweed Harvest"
                       className="w-full h-full object-cover rounded-xl"
                     />
                   </div>
                   <div className="bg-gradient-to-br from-purple-100 to-purple-200 rounded-xl h-40 flex items-center justify-center">
                     <img
-                      src="/images/harvest.webp"
+                      src={`${import.meta.env.BASE_URL}harvest.webp`}
                       alt="Seaweed Harvest"
                       className="w-full h-full object-cover rounded-xl"
                     />
@@ -141,7 +141,7 @@ export default function CommunityImpactPage() {
                 </div>
                 <div className="w-full h-32 bg-gradient-to-br from-emerald-100 to-emerald-200 rounded-xl mb-4 flex items-center justify-center">
                   <img
-                    src="/images/job1.webp"
+                    src={`${import.meta.env.BASE_URL}job1.webp`}
                     alt="Seaweed Farm"
                     className="w-full h-full object-cover rounded-xl"
                   />
@@ -161,7 +161,7 @@ export default function CommunityImpactPage() {
                 </div>
                 <div className="w-full h-32 bg-gradient-to-br from-blue-100 to-blue-200 rounded-xl mb-4 flex items-center justify-center">
                   <img
-                    src="/images/job2.webp"
+                    src={`${import.meta.env.BASE_URL}job2.webp`}
                     alt="Processing & Manufacturing"
                     className="w-full h-full object-cover rounded-xl"
                   />
@@ -181,7 +181,7 @@ export default function CommunityImpactPage() {
                 </div>
                 <div className="w-full h-32 bg-gradient-to-br from-purple-100 to-purple-200 rounded-xl mb-4 flex items-center justify-center">
                   <img
-                    src="/images/job3.webp"
+                    src={`${import.meta.env.BASE_URL}job3.webp`}
                     alt="Research & Innovation"
                     className="w-full h-full object-cover rounded-xl"
                   />
@@ -201,7 +201,7 @@ export default function CommunityImpactPage() {
                 </div>
                 <div className="w-full h-32 bg-gradient-to-br from-pink-100 to-pink-200 rounded-xl mb-4 flex items-center justify-center">
                     <img
-                      src="/images/job4.png"
+                      src={`${import.meta.env.BASE_URL}job4.png`}
                       alt="Support Services"
                       className="w-full h-full object-cover rounded-xl"
                     />
@@ -224,14 +224,14 @@ export default function CommunityImpactPage() {
                 <div className="grid grid-cols-2 gap-4 mb-4">
                   <div className="bg-gradient-to-br from-blue-100 to-blue-200 rounded-xl h-24 flex items-center justify-center">
                     <img
-                      src="/images/c1.png"
+                      src={`${import.meta.env.BASE_URL}c1.png`}
                       alt="Education"
                       className="w-full h-full object-cover rounded-xl"
                     />
                   </div>
                   <div className="bg-gradient-to-br from-purple-100 to-purple-200 rounded-xl h-24 flex items-center justify-center">
                     <img
-                      src="/images/c2.png"
+                      src={`${import.meta.env.BASE_URL}c2.png`}
                       alt="Workshop"
                       className="w-full h-full object-cover rounded-xl"
                     />
@@ -239,7 +239,7 @@ export default function CommunityImpactPage() {
                 </div>
                 <div className="w-full h-48 bg-gradient-to-br from-emerald-200 to-teal-300 rounded-xl flex items-center justify-center">
                     <img
-                      src="/images/c3.png"
+                      src={`${import.meta.env.BASE_URL}c3.png`}
                       alt="Community Engagement"
                       className="w-full h-full object-cover rounded-xl"
                     />

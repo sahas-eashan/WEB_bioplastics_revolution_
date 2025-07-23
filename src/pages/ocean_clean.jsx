@@ -87,7 +87,7 @@ export default function OceanCleanupPage() {
               <div className="grid grid-cols-2 gap-4">
                 <div className="bg-gradient-to-br from-blue-100 to-blue-200 rounded-xl h-48 flex items-center justify-center">
                     <img
-                    src="/images/download1.webp"
+                    src={`${import.meta.env.BASE_URL}download1.webp`}
                     alt="Cleanup Team"
                     className="w-full h-full object-cover rounded-xl transition-transform duration-300 hover:scale-105"
                     />
@@ -95,14 +95,14 @@ export default function OceanCleanupPage() {
 
                 <div className="bg-gradient-to-br from-blue-200 to-blue-300 rounded-xl h-48 -mt-8 flex items-center justify-center">
                     <img
-                        src="/images/after.avif"
+                        src={`${import.meta.env.BASE_URL}after.avif`}
                         alt="After Cleanup"
                         className="w-full h-full object-cover rounded-xl transition-transform duration-300 hover:scale-105"
                     />
                 </div>
                                 <div className="bg-gradient-to-br from-teal-100 to-teal-200 rounded-xl h-32 -mt-8 flex items-center justify-center">
                     <img
-                        src="/images/OIP.webp"
+                        src={`${import.meta.env.BASE_URL}OIP.webp`}
                         alt="Cleanup Efforts"
                         className="w-full h-full object-cover rounded-xl transition-transform duration-300 hover:scale-105"
                     />
