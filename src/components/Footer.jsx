@@ -106,7 +106,7 @@ const Footer = () => {
             <h4 className="text-lg font-semibold text-green-400">Get In Touch</h4>
             <div className="space-y-4">
               <a 
-                href="tel:+1234567890"
+                href="tel:+94776413121"
                 className="flex items-center space-x-3 text-green-100 hover:text-green-300 transition-colors duration-300 group cursor-pointer"
               >
                 <div className="w-8 h-8 bg-green-800 rounded-full flex items-center justify-center group-hover:bg-green-700 transition-colors duration-300">
@@ -115,7 +115,7 @@ const Footer = () => {
                 <span>Call Us</span>
               </a>
               <a 
-                href="mailto:info@bioplasticrevolution.com"
+                href="mailto:sbioplasticrevolution@gmail.com"
                 className="flex items-center space-x-3 text-green-100 hover:text-green-300 transition-colors duration-300 group cursor-pointer"
               >
                 <div className="w-8 h-8 bg-green-800 rounded-full flex items-center justify-center group-hover:bg-green-700 transition-colors duration-300">
@@ -124,8 +124,8 @@ const Footer = () => {
                 <span>Email Us</span>
               </a>
               <div className="space-y-2 pl-11">
-                <p className="text-green-100">123 Seaside Avenue,</p>
-                <p className="text-green-100">Coastal City, 98765</p>
+                <p className="text-green-100">University of Moratuwa</p>
+                <p className="text-green-100">Katubedda, Sri Lanka</p>
               </div>
             </div>
           </div>
@@ -141,10 +141,10 @@ const Footer = () => {
                 <span>Follow our green journey:</span>
               </span>
               {[
-                { icon: Facebook, href: 'https://facebook.com', label: 'Facebook' },
-                { icon: Instagram, href: 'https://instagram.com', label: 'Instagram' },
+                { icon: Facebook, href: 'https://www.facebook.com/share/16he5PTvqC/', label: 'Facebook' },
+                { icon: Instagram, href: 'hhttps://www.instagram.com/bioplastic.revolution?igsh=MTB6OXc1Yjd4MGltNA==&utm_source=ig_contact_invite', label: 'Instagram' },
                 { icon: Twitter, href: 'https://twitter.com', label: 'Twitter' },
-                { icon: Globe, href: 'https://example.com', label: 'Website' }
+                { icon: Globe, href: 'https://bit.ly/Bioplastic-Revolution', label: 'Website' }
               ].map((social, index) => (
                 <a
                   key={index}
