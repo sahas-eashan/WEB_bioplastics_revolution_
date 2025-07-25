@@ -1,10 +1,44 @@
 import React from 'react';
 
 const photos = [
-  `${import.meta.env.BASE_URL}im1.jpeg`,
-  `${import.meta.env.BASE_URL}im2.jpeg`,
-  // Add more photo paths
+  `${import.meta.env.BASE_URL}J6A6648.jpg`,
+  `${import.meta.env.BASE_URL}J6A6649.jpg`,
+  `${import.meta.env.BASE_URL}J6A6651.jpg`,
+  `${import.meta.env.BASE_URL}J6A6652.jpg`,
+  `${import.meta.env.BASE_URL}J6A6654.jpg`,
+  `${import.meta.env.BASE_URL}J6A6660.jpg`,
+  `${import.meta.env.BASE_URL}J6A6662.jpg`,
+  `${import.meta.env.BASE_URL}J6A6663.jpg`,
+  `${import.meta.env.BASE_URL}J6A6665.jpg`,
+  `${import.meta.env.BASE_URL}J6A6678.jpg`,
+  `${import.meta.env.BASE_URL}J6A6680.jpg`,
+  `${import.meta.env.BASE_URL}J6A6684.jpg`,
+  `${import.meta.env.BASE_URL}J6A6685.jpg`,
+  `${import.meta.env.BASE_URL}J6A6685 (1).jpg`,
+  `${import.meta.env.BASE_URL}J6A6687.jpg`,
+  `${import.meta.env.BASE_URL}J6A6689.jpg`,
+  `${import.meta.env.BASE_URL}J6A6689 (1).jpg`,
+  `${import.meta.env.BASE_URL}J6A6690.jpg`,
+  `${import.meta.env.BASE_URL}J6A7020.jpg`,
+  `${import.meta.env.BASE_URL}J6A7384.jpg`,
+  `${import.meta.env.BASE_URL}J6A7387.jpg`,
+  `${import.meta.env.BASE_URL}J6A7634.jpg`,
+  `${import.meta.env.BASE_URL}DSC01095.jpg`,
+  `${import.meta.env.BASE_URL}DSC01107.jpg`,
+  `${import.meta.env.BASE_URL}DSC01131.jpg`,
+  `${import.meta.env.BASE_URL}DSC01164.jpg`,
+  `${import.meta.env.BASE_URL}DSC01172.jpg`,
+  `${import.meta.env.BASE_URL}DSC01214.jpg`,
+  `${import.meta.env.BASE_URL}DSC01259.jpg`,
+  `${import.meta.env.BASE_URL}DSC01265.jpg`,
+  `${import.meta.env.BASE_URL}THS01100.jpg`,
+  `${import.meta.env.BASE_URL}THS01101.jpg`,
+  `${import.meta.env.BASE_URL}THS01308.jpg`,
+  `${import.meta.env.BASE_URL}THS01309.jpg`,
+  `${import.meta.env.BASE_URL}WhatsApp Image 2025-06-10 at 15.39.26_20376d2a.jpg`,
+  `${import.meta.env.BASE_URL}WhatsApp Image 2025-06-10 at 15.40.08_dfb1a4e0.jpg`,
 ];
+
 
 export default function PhotoGallery() {
   return (
